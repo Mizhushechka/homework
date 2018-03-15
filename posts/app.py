@@ -40,10 +40,10 @@ def index():
             db.session.add(post)
             db.session.commit()
 
-            print('Post created!')
+            flash('Post created!')
         else:
-            print('Form is not valid! Post was not created.')
-            print(str(form.errors))
+            flash('Form is not valid! Post was not created.')
+            flash(str(form.errors))
 
     return render_template('home.txt', posts=posts)
 
