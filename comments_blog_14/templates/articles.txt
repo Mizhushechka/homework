@@ -1,0 +1,7 @@
+Посты в блоге:
+{% for item in posts %}
+    Заголовок: {{ item.title }}
+    Дата: {{ item.date_created }}
+    Текст: {{ item.content }}
+{% endfor %}
+Конец постов

@@ -8,11 +8,11 @@ from posts.app import db
 
 class GuestBookItem(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    author = db.Column(db.String(80), unique=True, nullable=False)
+    author = db.Column(db.String(80), nullable=False)
     # title = db.Column(db.String(140), unique=True, nullable=False)
     article = db.Column(db.String(5000), nullable=False)
     date_created = db.Column(db.Date, default=date.today)
-    to_delete = db.Column(db.Boolean, default=True, nullable=False)
+    to_delete = db.Column(db.Boolean, default=False, nullable=True)
 
     def to_dict(self):
         return {
